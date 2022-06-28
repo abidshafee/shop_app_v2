@@ -4,6 +4,8 @@ import 'package:badges/badges.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/CategoriesWidget.dart';
+
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -71,13 +73,55 @@ class HomePage extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Text(
-                    "Search an Item: ",
-                    style: TextStyle(color: Colors.white, fontSize: 20),
-                  ),
+                  //Text(
+                  //  "Search an Item: ",
+                  //  style: TextStyle(color: Colors.white, fontSize: 20),
+                  //),
                 ],
               ),
             ),
+            //Search Bar
+            Container(
+              margin: const EdgeInsets.all(15),
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              height: 50,
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(20)),
+              child: Row(
+                children: [
+                  const Icon(Icons.search),
+                  Container(
+                    margin: const EdgeInsets.only(left: 10),
+                    width: 300,
+                    child: TextFormField(
+                      decoration: const InputDecoration(
+                        hintText: "Search an Item Here",
+                        border: InputBorder.none,
+                      ),
+                    ),
+                  ),
+                  const Spacer(),
+                  const Icon(Icons.filter_list),
+                ],
+              ),
+            ),
+            //Products Widgets
+            Container(
+              padding: const EdgeInsets.only(top: 20),
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30),
+                  topRight: Radius.circular(30),
+                ),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  CategoriesWidget(),
+                ],
+              ),
+            )
           ],
         )),
       ),
