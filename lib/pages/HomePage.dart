@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/CategoriesWidget.dart';
+import '../widgets/ItemsWidget.dart';
 import '../widgets/PopularItemsWidget.dart';
 
 class HomePage extends StatelessWidget {
@@ -121,6 +122,7 @@ class HomePage extends StatelessWidget {
                 children: const [
                   CategoriesWidget(),
                   PopularItemsWidget(),
+                  ItemsWidget(),
                 ],
               ),
             )

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app_v2/pages/HomePage.dart';
+import 'package:shop_app_v2/pages/ItemPage.dart';
 import 'package:shop_app_v2/pages/SplashScreen.dart';
 
 void main() {
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
       routes: {
         "/": (context) => const SplashScreen(),
         "homePage": (context) => HomePage(),
+        "itemPage": (context) => const ItemPage(),
       },
     );
   }

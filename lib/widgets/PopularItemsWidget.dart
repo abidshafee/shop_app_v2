@@ -12,7 +12,7 @@ class PopularItemsWidget extends StatelessWidget {
               const EdgeInsets.only(left: 10, right: 10, bottom: 5, top: 20),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
+            children: const [
               Text(
                 "Popular",
                 style: TextStyle(
@@ -39,8 +39,8 @@ class PopularItemsWidget extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.all(10),
                   padding: EdgeInsets.all(5),
-                  height: 120,
-                  width: 150,
+                  height: 140,
+                  width: 160,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10),
