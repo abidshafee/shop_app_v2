@@ -12,6 +12,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      title: "Shop App v2",
+      theme: ThemeData(
+          //primarySwatch: Colors.amberAccent,
+          fontFamily: "Roboto",
+          textTheme: const TextTheme(
+            bodyText2: TextStyle(color: Colors.black54),
+          )),
       routes: {
         "/": (context) => const SplashScreen(),
         "homePage": (context) => HomePage(),

@@ -35,6 +35,22 @@ class CategoriesWidget extends StatelessWidget {
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
+            children: List.generate(
+              8,
+              (index) => Padding(
+                padding: const EdgeInsets.only(right: 8),
+                child: CategoryCard(
+                  icon: "assets/images/5.png",
+                  title: "Lemonade",
+                  press: () {},
+                ),
+              ),
+            ),
+          ),
+        ),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               for (int i = 1; i < 8; i++)
@@ -81,5 +97,53 @@ class CategoriesWidget extends StatelessWidget {
         )
       ],
     );
+  }
+}
+
+class CategoryCard extends StatelessWidget {
+  const CategoryCard({
+    Key? key,
+    required this.icon,
+    required this.title,
+    required this.press,
+  }) : super(key: key);
+
+  final String icon, title;
+  final VoidCallback press;
+
+  @override
+  Widget build(BuildContext context) {
+    return OutlinedButton(
+        onPressed: press,
+        style: OutlinedButton.styleFrom(
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(5),
+            ),
+          ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 10,
+            vertical: 10,
+          ),
+          child: Column(
+            children: [
+              Image.asset(
+                //"assets/images/5.png",
+                icon,
+                height: 60,
+                width: 60,
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              Text(
+                title,
+                style: Theme.of(context).textTheme.subtitle2,
+              )
+            ],
+          ),
+        ));
   }
 }
